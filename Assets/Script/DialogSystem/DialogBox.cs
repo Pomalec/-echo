@@ -35,6 +35,7 @@ namespace Echo.Dialog
                 {
                     if (_currentLine >= _dialog.Lines.Count - 1)
                     {
+                        StopAllCoroutines();
                         Hide();
                         yield break;
                     }
