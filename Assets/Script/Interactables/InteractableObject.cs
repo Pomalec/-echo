@@ -14,15 +14,6 @@ public class InteractbleObject : MonoBehaviour
         //StartCoroutine(WaitForInteraction());
     }
 
-    private void Update()
-    {
-        //Test for interaction
-        if (isInteractable && Input.GetKeyDown(KeyCode.E))
-        {
-            TryInteract();
-        }
-    }
-
     public void TryInteract()
     {
         if (!isInteractable) return;
