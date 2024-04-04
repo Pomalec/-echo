@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Echo.Dialog
@@ -7,30 +8,48 @@ namespace Echo.Dialog
         [SerializeField] private DialogBox _dialogBox;
         [SerializeField] float _timeBetweenChars = 0.05f;
 
-        private static DialogBox s_dialogBox;
+        private static DialogManager s_instance;
         private static float s_timeBetweenChars;
 
-        public static DialogBox Box => s_dialogBox;
+        public static DialogManager Instance => s_instance;
         public static float TimeBetweenChars => s_timeBetweenChars;
 
         private void Awake()
         {
+            if (s_instance == null)
+            {
+                s_instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
             s_timeBetweenChars = _timeBetweenChars;
-            s_dialogBox = _dialogBox;
-            s_dialogBox.gameObject.SetActive(false);
+            _dialogBox.gameObject.SetActive(false);
         }
 
-        public static void Show(Dialog dialog)
+        public void Show(Dialog dialog)
         {
-            s_dialogBox.gameObject.SetActive(true);
-            s_dialogBox.LoadDialog(dialog);
+            if (!Playercontrol.CanInteract) return;
+
+            _dialogBox.gameObject.SetActive(true);
+            _dialogBox.LoadDialog(dialog);
             Playercontrol.CanMove = false;
+            Playercontrol.CanInteract = false;
         }
 
-        public static void Hide()
+        public void Hide()
         {
-            s_dialogBox.gameObject.SetActive(false);
+            _dialogBox.gameObject.SetActive(false);
             Playercontrol.CanMove = true;
+            StartCoroutine(WaitToEnableInteractions());
+        }
+
+        private IEnumerator WaitToEnableInteractions()
+        {
+            yield return new WaitForSeconds(0.5f);
+            Playercontrol.CanInteract = true;
         }
     }
 }

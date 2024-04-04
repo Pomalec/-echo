@@ -1,6 +1,7 @@
 using Echo.Dialog;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class InteractbleObject : MonoBehaviour
 {
     [SerializeField] private bool isInteractable;
@@ -17,7 +18,7 @@ public class InteractbleObject : MonoBehaviour
     public void TryInteract()
     {
         if (!isInteractable) return;
-        DialogManager.Show(_dialog);
+        DialogManager.Instance.Show(_dialog);
 
         //Maybe destroy after dialog?
         if (canPickup)

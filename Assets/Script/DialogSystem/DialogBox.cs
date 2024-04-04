@@ -17,17 +17,18 @@ namespace Echo.Dialog
             _currentLine = 0;
             StartCoroutine(MoveToNext());
             StartCoroutine(WaitForNext());
-            Playercontrol.CanMove = false;
+
         }
 
         public void Hide()
         {
             _dialog = null;
-            DialogManager.Hide();
+            DialogManager.Instance.Hide();
         }
 
         private IEnumerator WaitForNext()
         {
+            yield return new WaitForSeconds(0.5f);
             //TODO: Change key/input system
             while (true)
             {
@@ -35,7 +36,6 @@ namespace Echo.Dialog
                 {
                     if (_currentLine >= _dialog.Lines.Count - 1)
                     {
-                        StopAllCoroutines();
                         Hide();
                         yield break;
                     }
@@ -58,6 +58,7 @@ namespace Echo.Dialog
                 _dialogText.text = displayedText;
                 yield return new WaitForSeconds(DialogManager.TimeBetweenChars);
             }
+
         }
     }
 }
