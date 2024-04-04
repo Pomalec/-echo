@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Playercontrol : MonoBehaviour
 {
@@ -9,6 +6,9 @@ public class Playercontrol : MonoBehaviour
     public float movspeed;
     float speedx, speedy;
     Rigidbody2D rb;
+
+    public static bool CanMove { get; set; } = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,8 +17,17 @@ public class Playercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!CanMove)
+        {
+            if (rb.velocity != Vector2.zero)
+            {
+                rb.velocity = Vector2.zero;
+            }
+            return;
+        }
+
         speedx = Input.GetAxisRaw("Horizontal") * movspeed;
         speedy = Input.GetAxisRaw("Vertical") * movspeed;
-        rb.velocity=new Vector2 (speedx, speedy);
+        rb.velocity = new Vector2(speedx, speedy);
     }
 }
