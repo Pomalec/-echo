@@ -74,7 +74,12 @@ public class hookmov : MonoBehaviour
                 catching = false;
                 Debug.Log("no collision 2");
             }
-            
+            var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0f; // zero z
+            mouseWorldPos.x = 0f; // zero x
+            mouseWorldPos.y= 4f; //
+            transform.position = mouseWorldPos;
+            scoremanager.lives -= 1;
         }
     }
   ///  void OnCollisionExit2D(Collision2D collision)
