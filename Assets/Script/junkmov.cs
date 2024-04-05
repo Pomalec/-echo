@@ -16,10 +16,12 @@ public class junkmov : MonoBehaviour
     [SerializeField]
     private float speed;
     bool facing;//true right //false left 
-    GameObject otherfish;
+    GameObject otherfish;float sizex, sizey;
     void Start()
     {
         hookavailable = true;
+        sizex=GetComponent<Collider2D>().bounds.size.x;
+        sizey = GetComponent<Collider2D>().bounds.size.y;
         catched = false;
         startPos = this.transform.position;
         if (startPos.x < 0)
@@ -35,7 +37,15 @@ public class junkmov : MonoBehaviour
 
     // Update is called once per frame
 
-    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "jellyfish" || collision.gameObject.tag == "fish" || collision.gameObject.tag == "junk" || collision.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+
+
+    }
     void Update()
     {
        
@@ -54,5 +64,27 @@ public class junkmov : MonoBehaviour
         
 
 
+    }
+    public float getposx()
+    {
+        float currentx;
+        currentx = transform.position.x;
+        return currentx;
+    }
+    public float getposy()
+    {
+        float currenty;
+        currenty = transform.position.y;
+        return currenty;
+    }
+    public float getsizex()
+    {
+        
+        return sizex;
+    }
+    public float getsizey()
+    {
+        
+        return sizey;
     }
 }

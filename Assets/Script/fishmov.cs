@@ -38,7 +38,7 @@ public class fishmov : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "junk" || collision.gameObject.tag == "fish")
+        if (collision.gameObject.tag == "junk" || collision.gameObject.tag == "fish" || collision.gameObject.tag == "jellyfish")
         {
             Physics2D.IgnoreCollision(collision.collider,GetComponent<Collider2D>());
         }
@@ -59,6 +59,7 @@ public class fishmov : MonoBehaviour
     {
         if (GameObject.FindWithTag("Player").GetComponent<hookmov>().getfailed())
         {
+            Debug.Log("die");
             GameObject.FindWithTag("Player").GetComponent<hookmov>().restartfailed();
             Destroy(this.gameObject);
 

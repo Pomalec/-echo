@@ -17,7 +17,8 @@ public class hookmov : MonoBehaviour
         startPos = this.transform.position;
         catching = false;
         failed = false;
-        Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+       // Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        //Physics2D.IgnoreCollision(GameObject.FindWithTag("jellyfish").GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -36,25 +37,44 @@ public class hookmov : MonoBehaviour
             {
 
                 catching = false;
-                Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                
             }
         }
+      //  if (GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx()<=0f&&
+          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx() >=-1f &&
+          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposy()- (GameObject.FindWithTag("junk").GetComponent<junkmov>().getsizey())/2<= mouseWorldPos.y &&
+          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposy() + (GameObject.FindWithTag("junk").GetComponent<junkmov>().getsizey()) / 2 >= mouseWorldPos.y)
+        //{
+            //failed = true;
+            //catching = false;
+        //}
         //Debug.Log(" "+mouseWorldPos.y +" ");
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "fish" && catching== false)
+        if (collision.gameObject.tag == "fish" && catching== false&&failed==false)
         {
             catching = true;
-            Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(), GetComponent<Collider2D>(),false);
-
+            
+            Debug.Log("si collision ");
         }
         if (collision.gameObject.tag == "junk" && catching == true)
         {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+           Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(),true);
             failed = true;
             catching= false;
-
+            Debug.Log("no collision 2");
+        }
+        if (collision.gameObject.tag == "jellyfish" )
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
+            if (catching==true)
+            {
+                failed = true;
+                catching = false;
+                Debug.Log("no collision 2");
+            }
+            
         }
     }
   ///  void OnCollisionExit2D(Collision2D collision)
@@ -76,5 +96,22 @@ public class hookmov : MonoBehaviour
     public void restartfailed()
     {
         this.failed = false;
+    }
+    public void setfailed()
+    {
+        this.failed = true;
+        catching = false;
+    }
+    public float getposx()
+    {
+        float currentx;
+        currentx = transform.position.x;
+        return currentx;
+    }
+    public float getposy()
+    {
+        float currenty;
+        currenty = transform.position.y;
+        return currenty;
     }
 }
