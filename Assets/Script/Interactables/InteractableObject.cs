@@ -1,6 +1,6 @@
 using Echo.Dialog;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class InteractbleObject : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private bool canPickup;
     [SerializeField] private Dialog _dialog;
     [SerializeField] private bool _startsDialog = true;
-
+    [SerializeField] private bool minigame;
 
     private void Awake()
     {
@@ -20,7 +20,10 @@ public class InteractbleObject : MonoBehaviour
     {
         if (!isInteractable || !_startsDialog) return;
         DialogManager.Instance.Show(_dialog);
-
+        if (minigame)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
         //Maybe destroy after dialog?
         if (canPickup)
         {

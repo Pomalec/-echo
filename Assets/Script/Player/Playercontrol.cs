@@ -16,6 +16,7 @@ public class Playercontrol : MonoBehaviour
     public Animator animove;
     void Start()
     {
+        Time.timeScale = 1;
         animove = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ListenForRunInput());
@@ -38,7 +39,7 @@ public class Playercontrol : MonoBehaviour
         speedx = Input.GetAxisRaw("Horizontal") * movspeed;
         speedy = Input.GetAxisRaw("Vertical") * movspeed;
 
-
+        Debug.Log("a");
 
     }
 
