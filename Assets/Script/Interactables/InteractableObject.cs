@@ -7,6 +7,7 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private bool isInteractable;
     [SerializeField] private bool canPickup;
     [SerializeField] private Dialog _dialog;
+    [SerializeField] private bool _startsDialog = true;
 
 
     private void Awake()
@@ -17,7 +18,7 @@ public class InteractbleObject : MonoBehaviour
 
     public void TryInteract()
     {
-        if (!isInteractable) return;
+        if (!isInteractable || !_startsDialog) return;
         DialogManager.Instance.Show(_dialog);
 
         //Maybe destroy after dialog?
