@@ -14,6 +14,7 @@ namespace Echo.Player
         {
             if (collision.TryGetComponent(out InteractbleObject interactble))
             {
+                
                 _interactbleObject = interactble;
                 _interactionCoroutine = StartCoroutine(WaitForInteraction());
             }

@@ -13,9 +13,10 @@ public class Playercontrol : MonoBehaviour
 
     public static bool CanMove { get; set; } = true;
     public static bool CanInteract { get; set; } = true;
-
+    public Animator animove;
     void Start()
     {
+        animove = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ListenForRunInput());
     }
@@ -43,6 +44,18 @@ public class Playercontrol : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (speedx!=0||speedy!=0)
+        {
+            animove.SetFloat("X", speedx);
+            animove.SetFloat("Y", speedy);
+            
+            animove.SetBool("iswalking", true);
+        }
+        else
+        {
+            animove.SetBool("iswalking", false);
+        }
+
         var speedModifier = _running ? _runSpeedModifier : 1;
         rb.velocity = new Vector2(speedx, speedy) * speedModifier;
     }

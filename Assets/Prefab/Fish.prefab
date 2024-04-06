@@ -102,6 +102,7 @@ MonoBehaviour:
   scored:
     m_PersistentCalls:
       m_Calls: []
+  type: 0
   speed: 2
 --- !u!50 &7431660421303828854
 Rigidbody2D:

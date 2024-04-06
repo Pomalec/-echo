@@ -13,6 +13,8 @@ public class fishmov : MonoBehaviour
     bool catched;
     bool hookavailable;
     [SerializeField]
+    private int type;
+    [SerializeField]
     private float speed;
     bool facing;//true right //false left 
     GameObject otherfish;
@@ -107,9 +109,16 @@ public class fishmov : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                   
+                    switch (type)
+                    {
+                        case 0: scoremanager.scorecount0 += 1; break;
+                        case 1: scoremanager.scorecount1 += 1; break;
+                        case 2: break;
+                    }
                     Destroy(gameObject);
-                    scoremanager.scorecount += 1;
+                    
+                    
+                   
                 }
             }
         }

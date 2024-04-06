@@ -7,13 +7,15 @@ public class hookmov : MonoBehaviour
 {
   
     Vector3 startPos;
-   
+    [SerializeField] GameObject pausem;
+    bool paused;
     fishmov fish;
     bool failed;
     bool catching;
     // Start is called before the first frame update
     void Start()
     {
+        paused = false;
         startPos = this.transform.position;
         catching = false;
         failed = false;
@@ -24,22 +26,46 @@ public class hookmov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Escape key was pressed");
+            if (paused == false)
+            {
+                pausem.SetActive(true);
+                Time.timeScale = 0;
+                paused = true;
+            }
+            else
+            {
+                pausem.SetActive(false);
+                Time.timeScale = 1;
+                paused = false;
+            }
+
+
+        }
+        if (Time.timeScale == 1)
+        {
+
+            paused = false;
+        
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f; // zero z
         mouseWorldPos.x = 0f; // zero x
-        if (mouseWorldPos.y<=4f && mouseWorldPos.y>=-4.5f)
+        if (mouseWorldPos.y <= 4f && mouseWorldPos.y >= -4.5f)
         {
             transform.position = mouseWorldPos;
         }
-        if (mouseWorldPos.y >= 2f&&catching&&failed==false)
+        if (mouseWorldPos.y >= 2f && catching && failed == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
 
                 catching = false;
-                
+
             }
         }
+    }
       //  if (GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx()<=0f&&
           //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx() >=-1f &&
           //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposy()- (GameObject.FindWithTag("junk").GetComponent<junkmov>().getsizey())/2<= mouseWorldPos.y &&
@@ -79,7 +105,15 @@ public class hookmov : MonoBehaviour
             mouseWorldPos.x = 0f; // zero x
             mouseWorldPos.y= 4f; //
             transform.position = mouseWorldPos;
-            scoremanager.lives -= 1;
+            if (scoremanager.lives-1<0)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
+            }
+            else
+            {
+                scoremanager.lives -= 1;
+            }
+            
         }
     }
   ///  void OnCollisionExit2D(Collision2D collision)
