@@ -93,7 +93,7 @@ public class hookmov : MonoBehaviour
         }
         if (collision.gameObject.tag == "jellyfish" )
         {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
+            
             if (catching==true)
             {
                 failed = true;
@@ -112,8 +112,9 @@ public class hookmov : MonoBehaviour
             else
             {
                 scoremanager.lives -= 1;
+                Debug.Log(scoremanager.lives);
             }
-            
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
         }
     }
   ///  void OnCollisionExit2D(Collision2D collision)

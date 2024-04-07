@@ -63,7 +63,7 @@ public class fishmov : MonoBehaviour
         {
             Debug.Log("die");
             GameObject.FindWithTag("Player").GetComponent<hookmov>().restartfailed();
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
         }
         if (!GameObject.FindWithTag("Player").GetComponent<hookmov>().getcatching())
