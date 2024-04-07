@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class Playercontrol : MonoBehaviour
@@ -10,7 +9,7 @@ public class Playercontrol : MonoBehaviour
     Rigidbody2D rb;
     private bool _running = false;
     [SerializeField] GameObject pausem;
-    bool paused=false;
+    bool paused = false;
     [SerializeField] private float _runSpeedModifier = 1.5f;
 
     public static bool CanMove { get; set; } = true;
@@ -61,9 +60,13 @@ public class Playercontrol : MonoBehaviour
                 Time.timeScale = 1;
                 paused = false;
             }
-
-
         }
+    }
+
+    private void HidePlayer(bool hidden)
+    {
+        CanMove = hidden;
+        GetComponent<SpriteRenderer>().enabled = hidden;
     }
 
     private void FixedUpdate()
@@ -99,10 +102,4 @@ public class Playercontrol : MonoBehaviour
             yield return null;
         }
     }
-
-    public void SetPosition(Vector2 position)
-    {
-        transform.position = position;
-    }
-
 }

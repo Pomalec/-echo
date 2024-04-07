@@ -16,10 +16,22 @@ namespace Echo.Rooms
         private string _previousRoomName;
         private Door _previousDoorUsed;
 
+        private static RoomManager _instance;
+        public static RoomManager Instance => _instance;
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
             _previousRoomName = _currentRoom.RoomName;
+
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void Load(Door doorUsed)
