@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 1760775557}
     - target: {fileID: 1778538770485701213, guid: ee9cc61a74b93a840ad54e11bd3cae34, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: resume
+      value: HideMenu
       objectReference: {fileID: 0}
     - target: {fileID: 2048600537542801514, guid: ee9cc61a74b93a840ad54e11bd3cae34, type: 3}
       propertyPath: m_AnchorMax.y

@@ -9,7 +9,7 @@ public class Playercontrol : MonoBehaviour
     Rigidbody2D rb;
     private bool _running = false;
 
-    [SerializeField] private float _runSpeedModifier = 2;
+    [SerializeField] private float _runSpeedModifier = 1.5f;
 
     public static bool CanMove { get; set; } = true;
     public static bool CanInteract { get; set; } = true;
@@ -45,11 +45,11 @@ public class Playercontrol : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (speedx!=0||speedy!=0)
+        if (speedx != 0 || speedy != 0)
         {
             animove.SetFloat("X", speedx);
             animove.SetFloat("Y", speedy);
-            
+
             animove.SetBool("iswalking", true);
         }
         else
@@ -75,6 +75,11 @@ public class Playercontrol : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void SetPosition(Vector2 position)
+    {
+        transform.position = position;
     }
 
 }
