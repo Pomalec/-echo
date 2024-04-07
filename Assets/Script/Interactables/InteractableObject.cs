@@ -10,6 +10,7 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private bool _startsDialog = true;
     [SerializeField] private bool minigame;
     [SerializeField] private bool book;
+    [SerializeField] private bool bush;
     [SerializeField] private Dialog bookb1;
     [SerializeField] private Dialog bookb2;
     [SerializeField] private Dialog bookb3;
@@ -31,6 +32,19 @@ public class InteractbleObject : MonoBehaviour
             }
 
         }
+        if (bush)
+        {
+            int bushtype = this.gameObject.GetComponent<bushpuzzle>().gettype();
+            if (bushtype==1)
+            {
+                DialogManager.Instance.Show(_dialog);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+
+        }
         else
 
 
@@ -43,12 +57,13 @@ public class InteractbleObject : MonoBehaviour
                 return;
             }
 
-            if (!isInteractable || !_startsDialog) return;
+            if (!isInteractable || !_startsDialog)
+                return;
             DialogManager.Instance.Show(_dialog);
             //Maybe destroy after dialog?
             if (canPickup)
             {
-               AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
+                AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
                 Destroy(gameObject);
             }
         }
