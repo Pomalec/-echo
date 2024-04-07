@@ -412,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: b487c1453daad774f94526630db52a45, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 7462dc9a7cece3348b5f8c5f425bbc89, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 1c395242fe4c79b42b74e86233161186, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -7682,7 +7682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 389782d74eda82340ae05edf9af17764, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -7864,7 +7864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: c39a88f44be805747ad18dfcd75d52ff, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -9162,7 +9162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 2a6338d92f19fc244aa7355e5bd52c8a, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -9344,7 +9344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: cf74fc2f646e7e440b65a147b3f29163, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -9644,7 +9644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 03036ddcdc5442d449f65554bf68dab9, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0

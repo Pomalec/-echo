@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   _lines:
-  - Leafy
-  - I love leafy leafy is better than Potter
-  - ...
-  - "They\u2019re the same"
+  - "Says \u201CIf you\u2019re taking out a book, please return them to an alphabetical
+    order. They\u2019re horrible if they\u2019re out of place.\u201D"
+  - "Oh. This is my sister\u2019s writing. I wonder who it\u2019s to?"

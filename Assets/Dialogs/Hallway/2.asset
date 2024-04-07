@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f0528b9234681c409eec6fce1e1b8ae, type: 3}
-  m_Name: 9
+  m_Name: 2
   m_EditorClassIdentifier: 
   _lines:
-  - 'Satori tried getting me to wear one. '
-  - "I don\u2019t think I can wear anything in my hair"
-  - aside from my hat.
-  - My hat is my friend after all.
+  - "I wonder what could be in there\u2026 woah. Does"
+  - that go down to the furnace?
   - ...
-  - "I\u2019m just kidding. That would be insanity."
+  - "I\u2019m not gonna find out"
