@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f0528b9234681c409eec6fce1e1b8ae, type: 3}
-  m_Name: pillow
+  m_Name: endingnoCobwebs
   m_EditorClassIdentifier: 
   _lines:
-  - "It\u2019s very comfy. I forget what my sis said it was made out of."
-  - "It\u2019s certainly magical though, it\u2019s always the perfect temperature!"
+  - what
+  - "you didn\u2019t collect all the cobwebs"
+  - did you look behind the fishing rod?
+  - did you even look anywhere? Or did you happen to stumble upon them
+  - Whatever go find them they unlock a vital part of the game
+  - or do they~~??
+  - ...
+  - yeah they do

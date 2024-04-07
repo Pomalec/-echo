@@ -11,13 +11,28 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private bool book;
     [SerializeField] private bool rod;
     [SerializeField] private bool bush;
+    [SerializeField] private bool ending;
     [SerializeField] private Dialog bookb1;
     [SerializeField] private Dialog bookb2;
     [SerializeField] private Dialog bookb3;
     [SerializeField] private Dialog bookb4;
     [SerializeField] private Dialog bookb5;
+    [SerializeField] private bool cobwell;
+   
     public void TryInteract()
     {
+        if (ending)
+        {
+            if (Inventory.Instance.CobwebCount>7)
+            {
+                DialogManager.Instance.Show(bookb1); 
+            }
+            else
+            {
+                DialogManager.Instance.Show(bookb2); 
+            }
+            UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
+        }
         if (book)
         {
             int booktype = this.gameObject.GetComponent<bookpuzzle>().gettype();
@@ -48,7 +63,7 @@ public class InteractbleObject : MonoBehaviour
         }
         else
         {
-            if (minigame)
+            if (minigame&&Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(2);
                 return;
@@ -63,6 +78,10 @@ public class InteractbleObject : MonoBehaviour
                 if (rod)
                 {
                     Inventory.Instance.AddItem(Inventory.ItemType.Rod);
+                }
+                if (cobwell)
+                {
+                    Inventory.Instance.AddItem(Inventory.ItemType.Cobweb);
                 }
                 //AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
                 Destroy(this.gameObject);

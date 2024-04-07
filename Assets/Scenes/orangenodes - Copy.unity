@@ -363,11 +363,14 @@ MonoBehaviour:
   _startsDialog: 1
   minigame: 0
   book: 0
+  rod: 0
+  bush: 0
   bookb1: {fileID: 0}
   bookb2: {fileID: 0}
   bookb3: {fileID: 0}
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
+  cobwell: 0
 --- !u!50 &531067026
 Rigidbody2D:
   serializedVersion: 4
@@ -479,7 +482,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4763,7 +4766,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4814,11 +4817,14 @@ MonoBehaviour:
   _startsDialog: 1
   minigame: 0
   book: 0
+  rod: 0
+  bush: 0
   bookb1: {fileID: 0}
   bookb2: {fileID: 0}
   bookb3: {fileID: 0}
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
+  cobwell: 0
 --- !u!50 &983935531
 Rigidbody2D:
   serializedVersion: 4
@@ -4930,7 +4936,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f87a3f19497fedd40ad19b398e88d0e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5077,7 +5083,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1192111859
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5812,7 +5818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogBox: {fileID: 873403396}
-  _timeBetweenChars: 0.1
+  _timeBetweenChars: 0.001
 --- !u!1 &1210253532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5920,11 +5926,14 @@ MonoBehaviour:
   _startsDialog: 1
   minigame: 0
   book: 0
+  rod: 0
+  bush: 0
   bookb1: {fileID: 0}
   bookb2: {fileID: 0}
   bookb3: {fileID: 0}
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
+  cobwell: 0
 --- !u!4 &1292351745
 Transform:
   m_ObjectHideFlags: 0
@@ -6114,11 +6123,14 @@ MonoBehaviour:
   _startsDialog: 1
   minigame: 0
   book: 0
+  rod: 0
+  bush: 0
   bookb1: {fileID: 0}
   bookb2: {fileID: 0}
   bookb3: {fileID: 0}
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
+  cobwell: 0
 --- !u!50 &1408288637
 Rigidbody2D:
   serializedVersion: 4
@@ -6198,7 +6210,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408288635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6230,7 +6242,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6704,7 +6716,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -6879,6 +6891,56 @@ Tilemap:
       m_TileIndex: 75
       m_TileSpriteIndex: 75
       m_TileMatrixIndex: 3
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 3, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 77
+      m_TileSpriteIndex: 77
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 4, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 77
+      m_TileSpriteIndex: 77
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 5, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 77
+      m_TileSpriteIndex: 77
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 77
+      m_TileSpriteIndex: 77
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 77
+      m_TileSpriteIndex: 77
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -8119,8 +8181,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: bf21d259732c6fe499fcf8764639daec, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 5ec18641519e63c4dbf53395bd57605b, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 5
+    m_Data: {fileID: 11400000, guid: 5fbdfeaf7e7bf814989f10cea1351207, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e3301415ef70ca1448267533ebceaafb, type: 2}
   - m_RefCount: 1
@@ -8292,8 +8354,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: e2c87672ed92e124bad64b9ab0badd3b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: a2a043cea3165e74cab1c07765a96b72, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 5
+    m_Data: {fileID: -1930106506, guid: 3365a05690729d84483539a6316adcd7, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: 21300000, guid: 934753348cd02b44c977db4c479db3f2, type: 3}
   - m_RefCount: 7
@@ -8311,7 +8373,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9cf37357286183240acd9457cd4da4b6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 96
+  - m_RefCount: 101
     m_Data:
       e00: 1
       e01: 0
@@ -8384,7 +8446,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 124
+  - m_RefCount: 129
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -8445,15 +8507,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 45ba4c983f98cce4bb87d87fad7f75f9, type: 2}
   _startsDialog: 1
   minigame: 1
   book: 0
+  rod: 0
+  bush: 0
   bookb1: {fileID: 0}
   bookb2: {fileID: 0}
   bookb3: {fileID: 0}
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
+  cobwell: 0
 --- !u!50 &2142574400
 Rigidbody2D:
   serializedVersion: 4
@@ -8565,7 +8630,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -142797371
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.75294125, g: 0.75294125, b: 0.75294125, a: 0}

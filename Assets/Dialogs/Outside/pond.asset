@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0528b9234681c409eec6fce1e1b8ae, type: 3}
+  m_Name: pond
+  m_EditorClassIdentifier: 
+  _lines:
+  - "shoot. I don\u2019t have a fishing rod. Maybe I should go ask a gatekeeper for
+    one!"
+  - "\u2026I don\u2019t know where I\u2019d find one of those"

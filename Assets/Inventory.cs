@@ -12,11 +12,13 @@ public class Inventory : MonoBehaviour
     }
 
     [SerializeField]
-    public static int cobwebs;
+    private static int cobwebs;
 
     private List<ItemType> _items = new List<ItemType>();
 
     public bool MiniGamesComplete => CheckInventory(ItemType.FishingMinigame) && CheckInventory(ItemType.BookMinigame);
+
+    public int CobwebCount => cobwebs; 
 
     private static Inventory _instance;
 
@@ -36,12 +38,17 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+   
     public void AddItem(ItemType item)
     {
         _items.Add(item);
+        if (item==ItemType.Cobweb)
+        {
+            cobwebs++;
+            Debug.Log(cobwebs);
+        }
     }
-
+    
     public bool CheckInventory(ItemType item)
     {
         return _items.Contains(item);

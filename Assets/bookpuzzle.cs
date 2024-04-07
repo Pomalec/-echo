@@ -6,6 +6,9 @@ public class bookpuzzle : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
+    private int truetype;
+
+    [SerializeField]
     private int type;
     private int typedummy;
     bool col;
