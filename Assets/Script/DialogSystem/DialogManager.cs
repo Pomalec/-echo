@@ -6,7 +6,7 @@ namespace Echo.Dialog
     public class DialogManager : MonoBehaviour
     {
         [SerializeField] private DialogBox _dialogBox;
-        [SerializeField] float _timeBetweenChars = 0.05f;
+        [SerializeField] float _timeBetweenChars = 5.15f;
 
         private static DialogManager s_instance;
         private static float s_timeBetweenChars;
@@ -28,7 +28,13 @@ namespace Echo.Dialog
             s_timeBetweenChars = _timeBetweenChars;
             _dialogBox.gameObject.SetActive(false);
         }
-
+        private void Update()
+        {
+            if ((Input.GetKeyDown(KeyCode.Space)))
+            {
+                _timeBetweenChars -= 0.10f;
+            }
+        }
         public void Show(Dialog dialog)
         {
             if (!Playercontrol.CanInteract) return;

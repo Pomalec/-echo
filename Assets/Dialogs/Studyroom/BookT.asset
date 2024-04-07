@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0528b9234681c409eec6fce1e1b8ae, type: 3}
+  m_Name: BookT
+  m_EditorClassIdentifier: 
+  _lines:
+  - "What books do we have here? I think these are the ones I need to sort\u2026 "
+  - "\u2026"
+  - To Kill a Mockingbird by Harper Lee.
+  - Press F to grab the book

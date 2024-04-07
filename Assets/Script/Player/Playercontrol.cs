@@ -39,7 +39,7 @@ public class Playercontrol : MonoBehaviour
         speedx = Input.GetAxisRaw("Horizontal") * movspeed;
         speedy = Input.GetAxisRaw("Vertical") * movspeed;
 
-        Debug.Log("a");
+     
 
     }
 
@@ -76,4 +76,5 @@ public class Playercontrol : MonoBehaviour
             yield return null;
         }
     }
+
 }

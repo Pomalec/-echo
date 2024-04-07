@@ -8,6 +8,7 @@ TagManager:
   - fish
   - junk
   - jellyfish
+  - book
   layers:
   - Default
   - TransparentFX
