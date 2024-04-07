@@ -1,21 +1,27 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
     public float TimeLeft;
     public bool TimerOn = false;
-
+    public static int bushes;
     public TextMeshProUGUI TimerTxt;
 
     void Start()
     {
+        bushes = 0;
         TimerOn = true;
     }
 
     void Update()
     {
+        if (bushes == 5)
+        {
+            TimerOn = false;
+        }
         if (TimerOn)
         {
             if (TimeLeft > 0)
@@ -28,6 +34,7 @@ public class TimerScript : MonoBehaviour
                 Debug.Log("Time is UP!");
                 TimeLeft = 0;
                 TimerOn = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }

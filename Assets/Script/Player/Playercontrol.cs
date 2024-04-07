@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class Playercontrol : MonoBehaviour
@@ -8,7 +9,8 @@ public class Playercontrol : MonoBehaviour
     float speedx, speedy;
     Rigidbody2D rb;
     private bool _running = false;
-
+    [SerializeField] GameObject pausem;
+    bool paused=false;
     [SerializeField] private float _runSpeedModifier = 1.5f;
 
     public static bool CanMove { get; set; } = true;
@@ -25,22 +27,43 @@ public class Playercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!CanMove)
+        if (Time.timeScale == 1)
         {
-            if (rb.velocity != Vector2.zero)
+
+            paused = false;
+            if (!CanMove)
             {
-                rb.velocity = Vector2.zero;
-                speedx = 0;
-                speedy = 0;
+                if (rb.velocity != Vector2.zero)
+                {
+                    rb.velocity = Vector2.zero;
+                    speedx = 0;
+                    speedy = 0;
+                }
+                return;
             }
-            return;
+
+            speedx = Input.GetAxisRaw("Horizontal") * movspeed;
+            speedy = Input.GetAxisRaw("Vertical") * movspeed;
         }
 
-        speedx = Input.GetAxisRaw("Horizontal") * movspeed;
-        speedy = Input.GetAxisRaw("Vertical") * movspeed;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Escape key was pressed");
+            if (paused == false)
+            {
+                pausem.SetActive(true);
+                Time.timeScale = 0;
+                paused = true;
+            }
+            else
+            {
+                pausem.SetActive(false);
+                Time.timeScale = 1;
+                paused = false;
+            }
 
-     
 
+        }
     }
 
     private void FixedUpdate()

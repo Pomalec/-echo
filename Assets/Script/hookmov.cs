@@ -56,14 +56,13 @@ public class hookmov : MonoBehaviour
         {
             transform.position = mouseWorldPos;
         }
-        if (mouseWorldPos.y >= 2f && catching && failed == false)
+        if (mouseWorldPos.y >= 3f && catching && failed == false)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
+            
 
                 catching = false;
 
-            }
+            
         }
     }
       //  if (GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx()<=0f&&

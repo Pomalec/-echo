@@ -105,13 +105,12 @@ public class fishmov : MonoBehaviour
             {
                 transform.position = mouseWorldPos;
             }
-            if (mouseWorldPos.y>=2f)
+            if (mouseWorldPos.y>=3f)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
+                
                     switch (type)
                     {
-                        case 0: scoremanager.scorecount0 += 1; break;
+                        case 0: scoremanager.scorecount0 -= 1; break;
                         case 1: scoremanager.scorecount1 += 1; break;
                         case 2: break;
                         case 3:break; case 4: break;
@@ -120,7 +119,7 @@ public class fishmov : MonoBehaviour
                     
                     
                    
-                }
+                
             }
         }
 

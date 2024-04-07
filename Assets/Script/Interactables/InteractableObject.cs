@@ -10,6 +10,7 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private bool _startsDialog = true;
     [SerializeField] private bool minigame;
     [SerializeField] private bool book;
+    [SerializeField] private bool rod;
     [SerializeField] private bool bush;
     [SerializeField] private Dialog bookb1;
     [SerializeField] private Dialog bookb2;
@@ -41,6 +42,7 @@ public class InteractbleObject : MonoBehaviour
             }
             else
             {
+                TimerScript.bushes += 1;
                 Destroy(this.gameObject);
             }
 
@@ -63,8 +65,12 @@ public class InteractbleObject : MonoBehaviour
             //Maybe destroy after dialog?
             if (canPickup)
             {
+                if (rod)
+                {
+                    Inventory.rod = true;
+                }
                 AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
-                Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
     }

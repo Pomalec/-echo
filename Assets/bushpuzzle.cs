@@ -5,14 +5,15 @@ using UnityEngine;
 public class bushpuzzle : MonoBehaviour
 {
     // Start is called before the first frame update
-    int type;
+    [SerializeField]
+    public int type;
     public Animator anim;
     private void Awake()
     {
-        if (Random.value < 0.5f)
-            type = 0;
-        else
-            type = 1;
+       // if (Random.value < 0.5f)
+       //     type = 0;
+       // else
+       //     type = 1;
         anim = GetComponent<Animator>();
     }
     void Start()

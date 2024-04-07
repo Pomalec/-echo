@@ -9,7 +9,7 @@ public class scoremanager : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI scoretxt0;
     public TextMeshProUGUI livesleft;
-    public TextMeshProUGUI scoretxt1;
+    //public TextMeshProUGUI scoretxt1;
    // public TextMeshProUGUI scoretxt2;
    // public TextMeshProUGUI scoretxt3;
    // public TextMeshProUGUI scoretxt4;
@@ -22,13 +22,21 @@ public class scoremanager : MonoBehaviour
     void Start()
     {
         lives = 3;
+        scorecount0 = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoretxt0.text = "Score 0: " + Mathf.Round(scorecount0);
-        scoretxt1.text = "Score 1: " + Mathf.Round(scorecount1);
+        if (scorecount0 <= 0) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
+            scoretxt0.text = "fish needed: 0";  }
+        else
+        {
+            scoretxt0.text = "fish needed: " + Mathf.Round(scorecount0);
+        }
+        
+      //  scoretxt1.text = "Score 1: " + Mathf.Round(scorecount1);
        // scoretxt2.text = "Score 2: " + Mathf.Round(scorecount2);
        // scoretxt3.text = "Score 3: " + Mathf.Round(scorecount3);
        // scoretxt4.text = "Score 4: " + Mathf.Round(scorecount4);
