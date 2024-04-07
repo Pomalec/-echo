@@ -46,8 +46,8 @@ namespace Echo.Audio
 
         public void Play(AudioType audioType)
         {
-            _audioPlayer.clip = _clips[audioType];
-            _audioPlayer.Play();
+            //_audioPlayer.clip = _clips[audioType];
+            //_audioPlayer.Play();
         }
     }
 }
