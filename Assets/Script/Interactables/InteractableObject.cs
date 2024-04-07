@@ -1,4 +1,3 @@
-using Echo.Audio;
 using Echo.Dialog;
 using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
@@ -36,7 +35,7 @@ public class InteractbleObject : MonoBehaviour
         if (bush)
         {
             int bushtype = this.gameObject.GetComponent<bushpuzzle>().gettype();
-            if (bushtype==1)
+            if (bushtype == 1)
             {
                 DialogManager.Instance.Show(_dialog);
             }
@@ -48,10 +47,6 @@ public class InteractbleObject : MonoBehaviour
 
         }
         else
-
-
-
-
         {
             if (minigame)
             {
@@ -59,17 +54,17 @@ public class InteractbleObject : MonoBehaviour
                 return;
             }
 
-            if (!isInteractable || !_startsDialog)
-                return;
+            if (!isInteractable || !_startsDialog) return;
+
             DialogManager.Instance.Show(_dialog);
-            //Maybe destroy after dialog?
+
             if (canPickup)
             {
                 if (rod)
                 {
-                    Inventory.rod = true;
+                    Inventory.Instance.AddItem(Inventory.ItemType.Rod);
                 }
-                AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
+                //AudioManager.Instance.Play(Echo.Audio.AudioType.Pickup);
                 Destroy(this.gameObject);
             }
         }

@@ -1,60 +1,49 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    public static bool rod;
+    public enum ItemType
+    {
+        Rod,
+        Cobweb,
+        FishingMinigame,
+        BookMinigame
+    }
+
     [SerializeField]
     public static int cobwebs;
-    [SerializeField]
-    public static bool fishingminigame;
-    [SerializeField]
-    public static bool bookminigame;
+
+    private List<ItemType> _items = new List<ItemType>();
+
+    public bool MiniGamesComplete => CheckInventory(ItemType.FishingMinigame) && CheckInventory(ItemType.BookMinigame);
+
+    private static Inventory _instance;
+
+    public static Inventory Instance => _instance;
+
     private void Awake()
     {
-        rod = false;
         cobwebs = 0;
-        fishingminigame = false;
-        bookminigame = false;
         DontDestroyOnLoad(gameObject);
-    }
-    void Start()
-    {
-       
-    }
-    public void addcobwebs()
-    {
-        cobwebs++;
-    }
-   public  int getcobwebs()
-    {
-        return cobwebs;
-    }
-    public bool bothminigamesdone()
-    {
-        if (fishingminigame && bookminigame)
+
+        if (_instance == null)
         {
-            return true;
+            _instance = this;
         }
         else
         {
-            return false;
+            Destroy(gameObject);
         }
     }
-    public void equiprod()
+
+    public void AddItem(ItemType item)
     {
-        rod = true;
+        _items.Add(item);
     }
-    public bool isrodequipped()
+
+    public bool CheckInventory(ItemType item)
     {
-        return rod;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(isrodequipped());
+        return _items.Contains(item);
     }
 }
