@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694be3069a3b5f41a24feed7253066d, type: 3}
+  m_Name: Orange
+  m_EditorClassIdentifier: 
+  _roomName: orangenodes
+  _connectedRooms:
+  - {fileID: 11400000, guid: ba206fcf594823c498942d96ea7ae888, type: 2}
