@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6291911294b4ec74c98f929afef8f48f, type: 3}
   m_Name: BookT
   m_EditorClassIdentifier: 
-  _dialog: {fileID: 11400000, guid: 7d47ac2590e4c2840a4a283f45017285, type: 2}
+  _dialog: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
+  _correctBookshelfIndex: 5
