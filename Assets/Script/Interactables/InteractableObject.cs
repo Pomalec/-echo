@@ -18,9 +18,17 @@ public class InteractbleObject : MonoBehaviour
     [SerializeField] private Dialog bookb4;
     [SerializeField] private Dialog bookb5;
     [SerializeField] private bool cobwell;
-   
+    [SerializeField] private bool blockedpath;
     public void TryInteract()
     {
+        if (blockedpath)
+        {
+            if (Inventory.Instance.CheckInventory(Inventory.ItemType.FishingMinigame)&&
+                Inventory.Instance.CheckInventory(Inventory.ItemType.BookMinigame))
+            {
+                Destroy(gameObject);
+            }
+        }
         if (ending)
         {
             if (Inventory.Instance.CobwebCount>7)
