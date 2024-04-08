@@ -35,7 +35,7 @@ public class InteractbleObject : MonoBehaviour
         }
         if (book)
         {
-            int booktype = this.gameObject.GetComponent<bookpuzzle>().gettype();
+            int booktype = this.gameObject.GetComponent<BookShelf>().gettype();
             switch (booktype)
             {
                 case 0: DialogManager.Instance.Show(_dialog); break;
