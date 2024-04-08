@@ -503,7 +503,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 975800daabf79aa4db0f924495031ade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -523,7 +523,7 @@ Transform:
   m_GameObject: {fileID: 206736999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.91, y: -3.65, z: -1.153711}
+  m_LocalPosition: {x: -0.19, y: -3.65, z: -1.153711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 531067026}
   - component: {fileID: 531067025}
   m_Layer: 1
-  m_Name: Scrunched Up Paper (Di)
+  m_Name: Crackinthe wall(Di)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfbf1112abfd79846970f5c4235b13cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -880,7 +880,7 @@ Transform:
   m_GameObject: {fileID: 531067024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.65, y: -2.87, z: -1.153711}
+  m_LocalPosition: {x: -3.65, y: -2.57, z: -1.153711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4622,7 +4622,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8e1c698f55401943aeb83f0d1014d07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5283,7 +5283,7 @@ Camera:
   m_GameObject: {fileID: 1724165398}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5403,7 +5403,7 @@ Transform:
   m_GameObject: {fileID: 1740876063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.8, y: -3.65, z: -1.153711}
+  m_LocalPosition: {x: -15.8, y: -2.69, z: -1.153711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5547,10 +5547,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -142797371
-  m_SortingLayer: 1
+  m_SortingLayerID: -1192111859
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 975800daabf79aa4db0f924495031ade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5590,7 +5590,7 @@ Transform:
   m_GameObject: {fileID: 1969144319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.26, y: -3.65, z: -1.153711}
+  m_LocalPosition: {x: -20.26, y: -3.05, z: -1.153711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5737,7 +5737,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 975800daabf79aa4db0f924495031ade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7447,6 +7447,18 @@ PrefabInstance:
     - target: {fileID: 4980116834677556205, guid: 4456b9db2ccb4fe46bb20dbd8869e1c4, type: 3}
       propertyPath: orthographic size
       value: 9.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980116834677556205, guid: 4456b9db2ccb4fe46bb20dbd8869e1c4, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980116834677556205, guid: 4456b9db2ccb4fe46bb20dbd8869e1c4, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980116834677556205, guid: 4456b9db2ccb4fe46bb20dbd8869e1c4, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6867598050042307124, guid: 4456b9db2ccb4fe46bb20dbd8869e1c4, type: 3}
       propertyPath: m_Name
