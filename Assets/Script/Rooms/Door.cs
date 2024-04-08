@@ -7,15 +7,9 @@ namespace Echo.Rooms
     {
         [SerializeField] private Room _room;
 
-        private Collider2D _collider;
         private bool _canUse = true;
 
         public Room ConnectedRoom => _room;
-
-        private void Awake()
-        {
-            _collider = GetComponent<Collider2D>();
-        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {

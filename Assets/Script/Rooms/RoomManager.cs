@@ -21,7 +21,6 @@ namespace Echo.Rooms
 
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
             _previousRoomName = _currentRoom.RoomName;
 
             if (_instance == null)
@@ -32,6 +31,7 @@ namespace Echo.Rooms
             {
                 Destroy(gameObject);
             }
+            DontDestroyOnLoad(gameObject);
         }
 
         public void Load(Door doorUsed)
@@ -52,8 +52,8 @@ namespace Echo.Rooms
                 yield return null;
             }
 
-            var doorToSpawnAt = FindObjectsByType<Door>(FindObjectsSortMode.None)
-                .First(door => door.ConnectedRoom.RoomName == _previousRoomName);
+            var doorsInRoom = FindObjectsByType<Door>(FindObjectsSortMode.None);
+            var doorToSpawnAt = doorsInRoom.Where(door => door.ConnectedRoom.RoomName == _previousRoomName).FirstOrDefault();
 
 
             _currentRoom = _previousDoorUsed.ConnectedRoom;
