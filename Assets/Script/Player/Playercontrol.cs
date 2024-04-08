@@ -15,6 +15,24 @@ public class Playercontrol : MonoBehaviour
     public static bool CanMove { get; set; } = true;
     public static bool CanInteract { get; set; } = true;
     public Animator animove;
+
+    private static Playercontrol _instance;
+
+    public static Playercontrol Instance => _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         Time.timeScale = 1;
