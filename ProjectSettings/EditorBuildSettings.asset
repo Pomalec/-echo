@@ -10,14 +10,17 @@ EditorBuildSettings:
     guid: 5ce625c5db685ae4cb57894d4bc27f18
   - enabled: 1
     path: Assets/Scenes/orangenodes.unity
-    guid: 2afe0afb39094c34480549ce7c494f4c
+    guid: dbc1f02e66696794ea94c898749597f7
   - enabled: 1
     path: Assets/Scenes/fishingtest.unity
     guid: 7d4ecc360f603114f8c6d835cec26cd4
   - enabled: 1
     path: Assets/Scenes/greennodes.unity
-    guid: 73c42e7a02c8eb046a3444b839bb9134
+    guid: 47cb3651bcd8d3741bdd116679f99ace
   - enabled: 1
-    path: Assets/Scenes/orangenodes - Copy.unity
-    guid: 33d1c3979e24b844b9d37aa61e59e950
+    path: Assets/Scenes/whitenodes.unity
+    guid: 937b06a22cc1e9848ab4c698d8747303
+  - enabled: 1
+    path: Assets/Scenes/purplenode.unity
+    guid: 5e000e095f234ab45bbf8056360e4557
   m_configObjects: {}
