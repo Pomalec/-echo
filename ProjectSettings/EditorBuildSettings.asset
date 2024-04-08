@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rednodes.unity
     guid: 9f8b1e0c9ad26174e9a1a55e03f3f910
+  - enabled: 1
+    path: Assets/Scenes/darkbluenodes.unity
+    guid: 4b47a1a491167d84db13584bc78fea1a
   m_configObjects: {}

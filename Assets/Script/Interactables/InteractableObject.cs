@@ -83,10 +83,15 @@ public class InteractbleObject : MonoBehaviour
         }
         else
         {
-            if (minigame&&Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
+            if (minigame && Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
             {
-                Playercontrol.Instance.HidePlayer(false);
-                UnityEngine.SceneManagement.SceneManager.LoadScene("fishingtest");
+                
+                DialogManager.Instance.Show(bookb1, () =>
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("fishingtest");
+                    Playercontrol.Instance.HidePlayer(false);
+                });
+               
                 return;
             }
 
