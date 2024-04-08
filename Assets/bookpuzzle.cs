@@ -43,6 +43,12 @@ public class bookpuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (truetype==type)
+        {
+            Inventory.Instance.AddItem(Inventory.ItemType.BookMinigame);
+        }
+        else { Inventory.Instance.RemoveItem(Inventory.ItemType.BookMinigame);
+                }
         if (col) {
             if (Input.GetKeyDown(KeyCode.F))
             {

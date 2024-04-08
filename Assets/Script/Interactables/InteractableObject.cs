@@ -65,6 +65,7 @@ public class InteractbleObject : MonoBehaviour
         {
             if (minigame&&Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
             {
+                
                 UnityEngine.SceneManagement.SceneManager.LoadScene(2);
                 return;
             }

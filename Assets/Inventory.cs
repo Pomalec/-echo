@@ -42,13 +42,17 @@ public class Inventory : MonoBehaviour
     public void AddItem(ItemType item)
     {
         _items.Add(item);
-        if (item==ItemType.Cobweb)
-        {
-            cobwebs++;
-            Debug.Log(cobwebs);
-        }
+        
     }
-    
+    public void RemoveItem(ItemType item)
+    {
+        if (_items.Contains(ItemType.BookMinigame))
+        {
+            _items.Remove(item);
+        }
+        
+        
+    }
     public bool CheckInventory(ItemType item)
     {
         return _items.Contains(item);

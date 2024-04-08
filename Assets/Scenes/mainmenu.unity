@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: _currentRoom
       value: 
       objectReference: {fileID: 11400000, guid: 30cf3f8fea018db4786b2351125468f6, type: 2}
+    - target: {fileID: 4162879806410547665, guid: 821bd6ba2b1ee2d4cb78366784544085, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4748009317579346487, guid: 821bd6ba2b1ee2d4cb78366784544085, type: 3}
       propertyPath: m_Name
       value: RoomManager
@@ -286,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 6597540368240055194, guid: 821bd6ba2b1ee2d4cb78366784544085, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729485747668758998, guid: 821bd6ba2b1ee2d4cb78366784544085, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
