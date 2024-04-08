@@ -437,6 +437,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: quitgame
       objectReference: {fileID: 0}
+    - target: {fileID: 4060460015012151884, guid: 143b27b29ea09e94dbb831fd0b5208de, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060460015012151884, guid: 143b27b29ea09e94dbb831fd0b5208de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47722d2fa093a3949ad2920ad958ef06, type: 3}
     - target: {fileID: 6043840313158467318, guid: 143b27b29ea09e94dbb831fd0b5208de, type: 3}
       propertyPath: m_Sprite
       value: 
