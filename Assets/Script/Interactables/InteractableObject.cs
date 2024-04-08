@@ -1,5 +1,6 @@
 using Echo.Dialog;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class InteractbleObject : MonoBehaviour
 {
@@ -31,15 +32,26 @@ public class InteractbleObject : MonoBehaviour
         }
         if (ending)
         {
+            Playercontrol.Instance.HidePlayer(false);
             if (Inventory.Instance.CobwebCount>7)
             {
-                DialogManager.Instance.Show(bookb1); 
+                DialogManager.Instance.Show(bookb1, () =>
+                {
+                    Destroy(Playercontrol.Instance.gameObject);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
+                    
+                }); 
             }
             else
             {
-                DialogManager.Instance.Show(bookb2); 
+                DialogManager.Instance.Show(bookb2, () =>
+                {
+                    Destroy(Playercontrol.Instance.gameObject);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
+                    
+                }); 
             }
-            UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
+            
         }
         if (book)
         {
@@ -73,8 +85,8 @@ public class InteractbleObject : MonoBehaviour
         {
             if (minigame&&Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
             {
-                
-                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+                Playercontrol.Instance.HidePlayer(false);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("fishingtest");
                 return;
             }
 

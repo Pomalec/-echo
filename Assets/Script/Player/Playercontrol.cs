@@ -81,7 +81,7 @@ public class Playercontrol : MonoBehaviour
         }
     }
 
-    private void HidePlayer(bool hidden)
+    public void HidePlayer(bool hidden)
     {
         CanMove = hidden;
         GetComponent<SpriteRenderer>().enabled = hidden;

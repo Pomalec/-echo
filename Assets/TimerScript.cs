@@ -21,6 +21,7 @@ public class TimerScript : MonoBehaviour
         if (bushes == 5)
         {
             TimerOn = false;
+            SceneManager.LoadScene("ending");
         }
         if (TimerOn)
         {
