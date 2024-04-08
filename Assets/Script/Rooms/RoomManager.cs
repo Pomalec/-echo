@@ -42,8 +42,6 @@ namespace Echo.Rooms
 
         public IEnumerator StartLoading()
         {
-            _rightCurtain.SetActive(true);
-            _leftCurtain.SetActive(true);
             yield return StartCoroutine(TransitionCurtains(true));
 
             var operation = SceneManager.LoadSceneAsync(_previousDoorUsed.ConnectedRoom.RoomName);
@@ -62,8 +60,6 @@ namespace Echo.Rooms
             _playerController = FindObjectOfType<Playercontrol>();
             _playerController.transform.position = doorToSpawnAt.transform.position;
             yield return StartCoroutine(TransitionCurtains(false));
-            _rightCurtain.SetActive(false);
-            _leftCurtain.SetActive(false);
         }
 
         private IEnumerator TransitionCurtains(bool opens)
