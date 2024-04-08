@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/purplenode.unity
     guid: 5e000e095f234ab45bbf8056360e4557
+  - enabled: 1
+    path: Assets/Scenes/rednodes.unity
+    guid: 9f8b1e0c9ad26174e9a1a55e03f3f910
   m_configObjects: {}
