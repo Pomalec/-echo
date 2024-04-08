@@ -56,7 +56,7 @@ namespace Echo.Dialog
             {
                 displayedText += text[i];
                 _dialogText.text = displayedText;
-                yield return new WaitForSeconds(DialogManager.TimeBetweenChars);
+                yield return new WaitForSeconds(DialogManager.Instance.TimeBetweenChars);
             }
 
         }

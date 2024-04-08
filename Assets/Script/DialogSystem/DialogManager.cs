@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,13 +7,15 @@ namespace Echo.Dialog
     public class DialogManager : MonoBehaviour
     {
         [SerializeField] private DialogBox _dialogBox;
-        [SerializeField] float _timeBetweenChars = 5.15f;
+        [SerializeField] float _timeBetweenChars = 0.5f;
+
+        private bool _dialogOpen;
+        private Action _postDialogAction;
 
         private static DialogManager s_instance;
-        private static float s_timeBetweenChars;
 
         public static DialogManager Instance => s_instance;
-        public static float TimeBetweenChars => s_timeBetweenChars;
+        public float TimeBetweenChars => _timeBetweenChars;
 
         private void Awake()
         {
@@ -25,17 +28,10 @@ namespace Echo.Dialog
                 Destroy(gameObject);
             }
 
-            s_timeBetweenChars = _timeBetweenChars;
             _dialogBox.gameObject.SetActive(false);
         }
-        private void Update()
-        {
-            if ((Input.GetKeyDown(KeyCode.Space)))
-            {
-                _timeBetweenChars -= 0.10f;
-            }
-        }
-        public void Show(Dialog dialog)
+
+        public void Show(Dialog dialog, Action action = null)
         {
             if (!Playercontrol.CanInteract) return;
 
@@ -43,6 +39,10 @@ namespace Echo.Dialog
             _dialogBox.LoadDialog(dialog);
             Playercontrol.CanMove = false;
             Playercontrol.CanInteract = false;
+            _dialogOpen = true;
+            StartCoroutine(WaitForSpeedUp());
+
+            _postDialogAction = action;
         }
 
         public void Hide()
@@ -50,6 +50,24 @@ namespace Echo.Dialog
             _dialogBox.gameObject.SetActive(false);
             Playercontrol.CanMove = true;
             StartCoroutine(WaitToEnableInteractions());
+            _dialogOpen = false;
+            _postDialogAction?.Invoke();
+        }
+
+        private IEnumerator WaitForSpeedUp()
+        {
+            while (_dialogOpen)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    _timeBetweenChars /= 2;
+                }
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    _timeBetweenChars *= 2;
+                }
+                yield return null;
+            }
         }
 
         private IEnumerator WaitToEnableInteractions()
