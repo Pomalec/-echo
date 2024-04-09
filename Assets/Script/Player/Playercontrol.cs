@@ -112,9 +112,11 @@ public class Playercontrol : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 _running = true;
+                animove.SetBool("isrunning", true);
             }
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
+                animove.SetBool("isrunning", false);
                 _running = false;
             }
             yield return null;
