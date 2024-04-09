@@ -8,7 +8,8 @@ public class Inventory : MonoBehaviour
         Rod,
         Cobweb,
         FishingMinigame,
-        BookMinigame
+        BookMinigame,
+        skateboard
     }
 
     [SerializeField]
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
 
     public bool MiniGamesComplete => CheckInventory(ItemType.FishingMinigame) && CheckInventory(ItemType.BookMinigame);
 
+    
     public int CobwebCount => cobwebs; 
 
     private static Inventory _instance;
