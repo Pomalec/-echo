@@ -8,7 +8,7 @@ TagManager:
   - fish
   - junk
   - jellyfish
-  - book
+  - playerhook
   layers:
   - Default
   - TransparentFX
@@ -22,7 +22,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Fish
   - 
   - 
   - 
@@ -51,7 +51,4 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2041751985
-    locked: 0
-  - name: middle
-    uniqueID: 3102855437
     locked: 0

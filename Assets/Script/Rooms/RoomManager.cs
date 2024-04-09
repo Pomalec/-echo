@@ -53,8 +53,14 @@ namespace Echo.Rooms
             var doorsInRoom = FindObjectsByType<Door>(FindObjectsSortMode.None);
             var doorToSpawnAt = doorsInRoom.Where(door => door.ConnectedRoom.RoomName == _previousRoomName).FirstOrDefault();
 
-
             _currentRoom = _previousDoorUsed.ConnectedRoom;
+
+            if (_currentRoom.RoomName == "greennodes")
+            {
+                Debug.Log("Changing music");
+                //AudioManager.Instance.ChangeBgm(BgmType.Chireiden);
+            }
+
             _previousRoomName = _currentRoom.RoomName;
             doorToSpawnAt.UseDoor();
             _playerController = FindObjectOfType<Playercontrol>();

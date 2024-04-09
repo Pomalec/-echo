@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 public class fishmov : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
     Vector3 startPos;
     public UnityEvent scored;
-  
+
     Rigidbody2D rb;
     bool catched;
     bool hookavailable;
@@ -18,33 +16,30 @@ public class fishmov : MonoBehaviour
     private float speed;
     bool facing;//true right //false left 
     GameObject otherfish;
+    private hookmov _hook;
+
     void Start()
     {
+        _hook = FindObjectOfType<hookmov>();
+
         hookavailable = true;
         catched = false;
         startPos = this.transform.position;
-        if (startPos.x<0)
+        if (startPos.x < 0)
         {
             facing = false;
             GetComponent<SpriteRenderer>().flipX = true;
         }
         else { facing = true; }
         rb = GetComponent<Rigidbody2D>();
-         Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(),GetComponent<Collider2D>());
-        Physics2D.IgnoreCollision(GameObject.FindWithTag("fish").GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        // otherfish = GameObject.FindWithTag("fish");
-        //Physics2D.IgnoreCollision(otherfish.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
     }
 
     // Update is called once per frame
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.tag == "junk" || collision.gameObject.tag == "fish" || collision.gameObject.tag == "jellyfish")
-        {
-            Physics2D.IgnoreCollision(collision.collider,GetComponent<Collider2D>());
-        }
-        if (collision.gameObject.tag == "Player" && catched == false)
+        if (collider.gameObject.tag == "playerhook" && catched == false)
         {
             if (hookavailable)
             {
@@ -52,30 +47,42 @@ public class fishmov : MonoBehaviour
             }
             else
                 catched = true;
-            
-
         }
-        
+
+        if (catched)
+        {
+            if (collider.TryGetComponent(out jellymov _))
+            {
+                _hook.NotifyJellyHit();
+                Destroy(gameObject);
+            }
+
+            if (collider.TryGetComponent(out junkmov _))
+            {
+                _hook.ResetHook();
+                Destroy(gameObject);
+            }
+        }
     }
+
     void Update()
     {
-        if (GameObject.FindWithTag("Player").GetComponent<hookmov>().getfailed())
+        if (_hook.getfailed())
         {
-            Debug.Log("die");
-            GameObject.FindWithTag("Player").GetComponent<hookmov>().restartfailed();
-            Destroy(this.gameObject);
-
+            _hook.restartfailed();
         }
-        if (!GameObject.FindWithTag("Player").GetComponent<hookmov>().getcatching())
+
+        if (!_hook.getcatching())
         {
             hookavailable = false;
-            
+
         }
         else
         {
-            
+
             hookavailable = true;
         }
+
         if (!catched)
         {
             if (!facing)
@@ -98,32 +105,24 @@ public class fishmov : MonoBehaviour
         }
         else
         {
-            var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0f; // zero z
-            mouseWorldPos.x = 0f; // zero x
-            if (mouseWorldPos.y <= 4f && mouseWorldPos.y >= -4.5f)
+            transform.position = _hook.HookImage.transform.position;
+
+            if (transform.position.y >= 3f)
             {
-                transform.position = mouseWorldPos;
-            }
-            if (mouseWorldPos.y>=3f)
-            {
-                
-                    switch (type)
-                    {
-                        case 0: scoremanager.scorecount0 -= 1; break;
-                        case 1: scoremanager.scorecount1 += 1; break;
-                        case 2: break;
-                        case 3:break; case 4: break;
-                    }
-                    Destroy(gameObject);
-                    
-                    
-                   
-                
+
+                switch (type)
+                {
+                    case 0: scoremanager.scorecount0 -= 1; break;
+                    case 1: scoremanager.scorecount1 += 1; break;
+                    case 2: break;
+                    case 3: break;
+                    case 4: break;
+                }
+                Destroy(gameObject);
             }
         }
 
 
     }
-   
+
 }
