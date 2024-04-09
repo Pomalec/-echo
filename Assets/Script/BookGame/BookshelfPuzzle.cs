@@ -25,7 +25,7 @@ public class BookshelfPuzzle : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.Play(Echo.Audio.AudioType.CorrectBookPlace);
+            AudioManager.Instance.Play(Echo.Audio.AudioType.WrongBookPlace);
         }
 
         foreach (var book in s_placedBooks)

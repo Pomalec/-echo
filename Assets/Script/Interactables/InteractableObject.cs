@@ -32,7 +32,7 @@ public class InteractbleObject : MonoBehaviour
 
         if (ending)
         {
-            Playercontrol.Instance.HidePlayer(false);
+            Playercontrol.Instance.ChangeVisibility(false);
             if (Inventory.Instance.CobwebCount > 7)
             {
                 DialogManager.Instance.Show(bookb1, () =>
@@ -89,7 +89,7 @@ public class InteractbleObject : MonoBehaviour
                 DialogManager.Instance.Show(bookb1, () =>
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene("fishingtest");
-                    Playercontrol.Instance.HidePlayer(false);
+                    Playercontrol.Instance.ChangeVisibility(false);
                 });
 
                 return;

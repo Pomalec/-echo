@@ -27,11 +27,14 @@ public class scoremanager : MonoBehaviour
     {
         if (scorecount0 <= 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
             scoretxt0.text = "fish needed: 0";
             Inventory.Instance.AddItem(Inventory.ItemType.FishingMinigame);
             AudioManager.Instance.Play(Echo.Audio.AudioType.TaskComplete);
             AudioManager.Instance.ChangeBgm(BgmType.PostTask2);
+            Playercontrol.Instance.ChangeVisibility(true);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
+
+            scorecount0 = 3;
         }
         else
         {

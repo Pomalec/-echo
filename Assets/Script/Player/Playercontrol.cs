@@ -81,7 +81,7 @@ public class Playercontrol : MonoBehaviour
         }
     }
 
-    public void HidePlayer(bool hidden)
+    public void ChangeVisibility(bool hidden)
     {
         CanMove = hidden;
         GetComponent<SpriteRenderer>().enabled = hidden;
@@ -102,14 +102,14 @@ public class Playercontrol : MonoBehaviour
         }
         if (Inventory.Instance.CheckInventory(Inventory.ItemType.skateboard))
         {
-             _runSpeedModifier = 2f;
+            _runSpeedModifier = 2f;
         }
         else
         {
             _runSpeedModifier = 1.5f;
         }
         var speedModifier = _running ? _runSpeedModifier : 1;
-        
+
         rb.velocity = new Vector2(speedx, speedy) * speedModifier;
     }
 
@@ -117,7 +117,7 @@ public class Playercontrol : MonoBehaviour
     {
         while (true)
         {
-           
+
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 _running = true;
@@ -125,11 +125,11 @@ public class Playercontrol : MonoBehaviour
                 {
                     animove.SetBool("isrunning", true);
                 }
-               
+
             }
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                
+
                 _running = false;
                 if (Inventory.Instance.CheckInventory(Inventory.ItemType.skateboard))
                 {

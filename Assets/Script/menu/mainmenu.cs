@@ -6,8 +6,9 @@ public class mainmenu : MonoBehaviour
     public void playgame()
     {
         AudioManager.Instance.ChangeBgm(BgmType.Cave);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(7);
     }
+
     public void quitgame()
     {
         Application.Quit();

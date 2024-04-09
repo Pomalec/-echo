@@ -1,3 +1,4 @@
+using Echo.Audio;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -55,10 +56,15 @@ namespace Echo.Rooms
 
             _currentRoom = _previousDoorUsed.ConnectedRoom;
 
+            if (_currentRoom.RoomName == "orangenodes")
+            {
+                AudioManager.Instance.ChangeBgm(BgmType.Cave);
+            }
+
             if (_currentRoom.RoomName == "greennodes")
             {
                 Debug.Log("Changing music");
-                //AudioManager.Instance.ChangeBgm(BgmType.Chireiden);
+                AudioManager.Instance.ChangeBgm(BgmType.Chireiden);
             }
 
             _previousRoomName = _currentRoom.RoomName;
