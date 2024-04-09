@@ -173,6 +173,7 @@ MonoBehaviour:
   bookb4: {fileID: 11400000, guid: b9a575cda13d1b044893d78145e63ec9, type: 2}
   bookb5: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &14803662
 Rigidbody2D:
   serializedVersion: 4
@@ -431,6 +432,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &121937434
 Rigidbody2D:
   serializedVersion: 4
@@ -649,6 +651,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &206737001
 Rigidbody2D:
   serializedVersion: 4
@@ -762,7 +765,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fe3b1a7a5bcd67498ebcda6f5e7ad31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1008,6 +1011,7 @@ MonoBehaviour:
   bookb4: {fileID: 11400000, guid: b9a575cda13d1b044893d78145e63ec9, type: 2}
   bookb5: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &422590318
 Rigidbody2D:
   serializedVersion: 4
@@ -1266,6 +1270,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &531067026
 Rigidbody2D:
   serializedVersion: 4
@@ -7467,6 +7472,7 @@ MonoBehaviour:
   bookb4: {fileID: 11400000, guid: b9a575cda13d1b044893d78145e63ec9, type: 2}
   bookb5: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &603330712
 Rigidbody2D:
   serializedVersion: 4
@@ -7725,6 +7731,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &626041874
 Rigidbody2D:
   serializedVersion: 4
@@ -7911,6 +7918,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &738381781
 Rigidbody2D:
   serializedVersion: 4
@@ -8217,7 +8225,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1192111859
-  m_SortingLayer: 0
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8961,6 +8969,7 @@ MonoBehaviour:
   bookb4: {fileID: 11400000, guid: b9a575cda13d1b044893d78145e63ec9, type: 2}
   bookb5: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &983935531
 Rigidbody2D:
   serializedVersion: 4
@@ -9266,6 +9275,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &1103975441
 Rigidbody2D:
   serializedVersion: 4
@@ -9452,6 +9462,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &1174502428
 Rigidbody2D:
   serializedVersion: 4
@@ -9756,6 +9767,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &1248385765
 Rigidbody2D:
   serializedVersion: 4
@@ -9945,6 +9957,7 @@ MonoBehaviour:
   bookb4: {fileID: 11400000, guid: b9a575cda13d1b044893d78145e63ec9, type: 2}
   bookb5: {fileID: 11400000, guid: eae1e5805898b0c4c8458f45dc5dc1ee, type: 2}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &1283964998
 Rigidbody2D:
   serializedVersion: 4
@@ -10200,6 +10213,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!4 &1292351745
 Transform:
   m_ObjectHideFlags: 0
@@ -10397,6 +10411,7 @@ MonoBehaviour:
   bookb4: {fileID: 0}
   bookb5: {fileID: 0}
   cobwell: 0
+  blockedpath: 0
 --- !u!50 &1408288637
 Rigidbody2D:
   serializedVersion: 4
