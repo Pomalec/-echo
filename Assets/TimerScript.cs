@@ -1,7 +1,7 @@
+using Echo.Rooms;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
@@ -35,7 +35,8 @@ public class TimerScript : MonoBehaviour
                 Debug.Log("Time is UP!");
                 TimeLeft = 0;
                 TimerOn = false;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                var door = FindFirstObjectByType<Door>();
+                RoomManager.Instance.Load(door);
             }
         }
     }

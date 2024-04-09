@@ -1,3 +1,4 @@
+using Echo.Audio;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,11 +15,18 @@ public class BookshelfPuzzle : MonoBehaviour
         { 4, false }
     };
 
-    public static int s_correctBooksPlaced = 0;
-
     public static void BookPlaced(int shelfIndex, bool correct)
     {
         s_placedBooks[shelfIndex] = correct;
+
+        if (correct)
+        {
+            AudioManager.Instance.Play(Echo.Audio.AudioType.CorrectBookPlace);
+        }
+        else
+        {
+            AudioManager.Instance.Play(Echo.Audio.AudioType.WrongBookPlace);
+        }
 
         foreach (var book in s_placedBooks)
         {
@@ -28,10 +36,12 @@ public class BookshelfPuzzle : MonoBehaviour
             }
         }
         Inventory.Instance.AddItem(Inventory.ItemType.BookMinigame);
+        AudioManager.Instance.Play(Echo.Audio.AudioType.TaskComplete);
+        AudioManager.Instance.ChangeBgm(BgmType.PostTask1);
     }
 
     private void OnDisable()
     {
-        s_correctBooksPlaced = 0;
+        s_placedBooks = null;
     }
 }

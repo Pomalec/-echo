@@ -19,8 +19,7 @@ public class Inventory : MonoBehaviour
 
     public bool MiniGamesComplete => CheckInventory(ItemType.FishingMinigame) && CheckInventory(ItemType.BookMinigame);
 
-    
-    public int CobwebCount => cobwebs; 
+    public int CobwebCount => cobwebs;
 
     private static Inventory _instance;
 
@@ -40,11 +39,11 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-   
+
     public void AddItem(ItemType item)
     {
         _items.Add(item);
-        
+
     }
     public void RemoveItem(ItemType item)
     {
@@ -52,9 +51,8 @@ public class Inventory : MonoBehaviour
         {
             _items.Remove(item);
         }
-        
-        
     }
+
     public bool CheckInventory(ItemType item)
     {
         return _items.Contains(item);

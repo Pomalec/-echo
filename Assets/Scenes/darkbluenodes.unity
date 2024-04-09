@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e9c65e4fb9d094ca31a92a61a9173e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookShelfIndex: 4
-  _placedBook: {fileID: 11400000, guid: 6565a4a924a00a147bd3b421b709eb72, type: 2}
+  _bookShelfIndex: 3
+  _placedBook: {fileID: 11400000, guid: a0fb62d4cdfb14c449affc52f7e10c2a, type: 2}
   type: 4
   anim: {fileID: 0}
 --- !u!70 &14803667
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e9c65e4fb9d094ca31a92a61a9173e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookShelfIndex: 1
+  _bookShelfIndex: 0
   _placedBook: {fileID: 11400000, guid: 315e27e679b443b428931e8fc4d09e99, type: 2}
   type: 5
   anim: {fileID: 0}
@@ -7624,8 +7624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e9c65e4fb9d094ca31a92a61a9173e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookShelfIndex: 2
-  _placedBook: {fileID: 11400000, guid: a0fb62d4cdfb14c449affc52f7e10c2a, type: 2}
+  _bookShelfIndex: 1
+  _placedBook: {fileID: 11400000, guid: 6565a4a924a00a147bd3b421b709eb72, type: 2}
   type: 2
   anim: {fileID: 0}
 --- !u!70 &603330717
@@ -8225,7 +8225,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1192111859
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8936,7 +8936,7 @@ GameObject:
   - component: {fileID: 983935536}
   - component: {fileID: 983935537}
   m_Layer: 1
-  m_Name: Bookshelve1
+  m_Name: Bookshelve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9121,8 +9121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e9c65e4fb9d094ca31a92a61a9173e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookShelfIndex: 0
-  _placedBook: {fileID: 11400000, guid: 4b120fb25dbcaa740ac7131537472778, type: 2}
+  _bookShelfIndex: 4
+  _placedBook: {fileID: 11400000, guid: 29c6e55b0a2a07949bed30353717e8b8, type: 2}
   type: 3
   anim: {fileID: 0}
 --- !u!70 &983935536
@@ -10109,8 +10109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e9c65e4fb9d094ca31a92a61a9173e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookShelfIndex: 3
-  _placedBook: {fileID: 11400000, guid: 29c6e55b0a2a07949bed30353717e8b8, type: 2}
+  _bookShelfIndex: 2
+  _placedBook: {fileID: 11400000, guid: 4d1293c0b25e4f9499148b5ba1ce1088, type: 2}
   type: 1
   anim: {fileID: 0}
 --- !u!70 &1283965003
@@ -10926,11 +10926,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 983935534}
   - {fileID: 422590321}
   - {fileID: 603330715}
   - {fileID: 1283965001}
   - {fileID: 14803665}
+  - {fileID: 983935534}
   m_Father: {fileID: 1672688099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2006463899

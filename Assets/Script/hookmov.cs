@@ -1,29 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Echo.Audio;
 using UnityEngine;
-using UnityEngine.Events;
 public class hookmov : MonoBehaviour
 {
-  
     Vector3 startPos;
     [SerializeField] GameObject pausem;
     bool paused;
     fishmov fish;
     bool failed;
     bool catching;
-    // Start is called before the first frame update
+    private LineRenderer _line;
+    private fishmov _fishOnHook;
+
+    [SerializeField] private SpriteRenderer _hookSprite;
+
+    public SpriteRenderer HookImage => _hookSprite;
+
     void Start()
     {
         paused = false;
         startPos = this.transform.position;
         catching = false;
         failed = false;
-       // Physics2D.IgnoreCollision(GameObject.FindWithTag("junk").GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        //Physics2D.IgnoreCollision(GameObject.FindWithTag("jellyfish").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        _line = GetComponentInChildren<LineRenderer>();
+        _line.positionCount = 2;
+        _line.useWorldSpace = true;
+        _line.SetPosition(1, new Vector2(1, 4));
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -41,89 +44,67 @@ public class hookmov : MonoBehaviour
                 Time.timeScale = 1;
                 paused = false;
             }
-
-
         }
         if (Time.timeScale == 1)
         {
 
             paused = false;
-        
-        var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f; // zero z
-        mouseWorldPos.x = 0f; // zero x
-        if (mouseWorldPos.y <= 4f && mouseWorldPos.y >= -4.5f)
-        {
-            transform.position = mouseWorldPos;
-        }
-        if (mouseWorldPos.y >= 3f && catching && failed == false)
-        {
-            
 
-                catching = false;
-
-            
-        }
-    }
-      //  if (GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx()<=0f&&
-          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposx() >=-1f &&
-          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposy()- (GameObject.FindWithTag("junk").GetComponent<junkmov>().getsizey())/2<= mouseWorldPos.y &&
-          //  GameObject.FindWithTag("junk").GetComponent<junkmov>().getposy() + (GameObject.FindWithTag("junk").GetComponent<junkmov>().getsizey()) / 2 >= mouseWorldPos.y)
-        //{
-            //failed = true;
-            //catching = false;
-        //}
-        //Debug.Log(" "+mouseWorldPos.y +" ");
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "fish" && catching== false&&failed==false)
-        {
-            catching = true;
-            
-            Debug.Log("si collision ");
-        }
-        if (collision.gameObject.tag == "junk" && catching == true)
-        {
-           Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(),true);
-            failed = true;
-            catching= false;
-            Debug.Log("no collision 2");
-        }
-        if (collision.gameObject.tag == "jellyfish" )
-        {
-            
-            if (catching==true)
-            {
-                failed = true;
-                catching = false;
-                Debug.Log("no collision 2");
-            }
             var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0f; // zero z
-            mouseWorldPos.x = 0f; // zero x
-            mouseWorldPos.y= 4f; //
-            transform.position = mouseWorldPos;
-            if (scoremanager.lives-1<0)
+            mouseWorldPos.x = 0.1248f; // zero x
+            if (mouseWorldPos.y <= 4.7223f && mouseWorldPos.y >= -4.5f)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
+                transform.position = mouseWorldPos;
+                _line.SetPosition(0, mouseWorldPos);
+                _line.SetPosition(1, new Vector2(0.1248f, 4.7223f));
             }
-            else
+            if (mouseWorldPos.y >= 3f && catching && failed == false)
             {
-                scoremanager.lives -= 1;
-                Debug.Log(scoremanager.lives);
+                catching = false;
             }
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
         }
     }
-  ///  void OnCollisionExit2D(Collision2D collision)
-  ///  {
-  ///      if (collision.gameObject.tag == "fish" )
-  ///      {
-  ///          catching = false;
-  ///
-  ///      }
-  ///  }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.TryGetComponent(out fishmov _) && !catching && !failed)
+        {
+            CatchFish();
+            AudioManager.Instance.Play(Echo.Audio.AudioType.FishPickup);
+            Debug.Log("si collision ");
+        }
+    }
+
+    public void ResetHook()
+    {
+        failed = true;
+        catching = false;
+    }
+
+    public void NotifyJellyHit()
+    {
+        if (catching == true)
+        {
+            ResetHook();
+        }
+
+        if (scoremanager.lives - 1 < 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("orangenodes");
+        }
+        else
+        {
+            scoremanager.lives -= 1;
+            Debug.Log(scoremanager.lives);
+        }
+    }
+
+    private void CatchFish()
+    {
+        catching = true;
+    }
+
     public bool getcatching()
     {
         return catching;
@@ -136,21 +117,10 @@ public class hookmov : MonoBehaviour
     {
         this.failed = false;
     }
+
     public void setfailed()
     {
         this.failed = true;
         catching = false;
-    }
-    public float getposx()
-    {
-        float currentx;
-        currentx = transform.position.x;
-        return currentx;
-    }
-    public float getposy()
-    {
-        float currenty;
-        currenty = transform.position.y;
-        return currenty;
     }
 }

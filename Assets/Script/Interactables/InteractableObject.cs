@@ -1,6 +1,5 @@
 using Echo.Dialog;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class InteractbleObject : MonoBehaviour
 {
@@ -24,23 +23,24 @@ public class InteractbleObject : MonoBehaviour
     {
         if (blockedpath)
         {
-            if (Inventory.Instance.CheckInventory(Inventory.ItemType.FishingMinigame)&&
+            if (Inventory.Instance.CheckInventory(Inventory.ItemType.FishingMinigame) &&
                 Inventory.Instance.CheckInventory(Inventory.ItemType.BookMinigame))
             {
                 Destroy(gameObject);
             }
         }
+
         if (ending)
         {
-            Playercontrol.Instance.HidePlayer(false);
-            if (Inventory.Instance.CobwebCount>7)
+            Playercontrol.Instance.ChangeVisibility(false);
+            if (Inventory.Instance.CobwebCount > 7)
             {
                 DialogManager.Instance.Show(bookb1, () =>
                 {
                     Destroy(Playercontrol.Instance.gameObject);
                     UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
-                    
-                }); 
+
+                });
             }
             else
             {
@@ -48,10 +48,10 @@ public class InteractbleObject : MonoBehaviour
                 {
                     Destroy(Playercontrol.Instance.gameObject);
                     UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
-                    
-                }); 
+
+                });
             }
-            
+
         }
         if (book)
         {
@@ -85,13 +85,13 @@ public class InteractbleObject : MonoBehaviour
         {
             if (minigame && Inventory.Instance.CheckInventory(Inventory.ItemType.Rod))//check for rod in the inventory
             {
-                
+
                 DialogManager.Instance.Show(bookb1, () =>
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene("fishingtest");
-                    Playercontrol.Instance.HidePlayer(false);
+                    Playercontrol.Instance.ChangeVisibility(false);
                 });
-               
+
                 return;
             }
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BookA
   m_EditorClassIdentifier: 
   _dialog: {fileID: 11400000, guid: 7d47ac2590e4c2840a4a283f45017285, type: 2}
-  _correctBookshelfIndex: 2
+  _correctBookshelfIndex: 1
