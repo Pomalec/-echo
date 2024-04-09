@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 4593614cbbe2d1a45a89eeed3c3d7322, type: 2}
+  _dialog: {fileID: 11400000, guid: 2fd86af3bc14b814f9c2113430e19058, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -317,7 +317,7 @@ SpriteRenderer:
   m_SortingLayerID: -142797371
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 289c9e537ff7e244d86d9219387c7ddb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 6a97f4ac15f33c34cb2877eaeba9c049, type: 2}
+  _dialog: {fileID: 11400000, guid: b29a1d8d9c2e2f94991213a5d8b698de, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 6a97f4ac15f33c34cb2877eaeba9c049, type: 2}
+  _dialog: {fileID: 11400000, guid: 389782d74eda82340ae05edf9af17764, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
@@ -6926,7 +6926,7 @@ Transform:
   m_GameObject: {fileID: 720881690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -0.23, z: -1.79}
+  m_LocalPosition: {x: 0.12, y: -0.23, z: -1.79}
   m_LocalScale: {x: 0.22, y: 0.47, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7196,7 +7196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   canPickup: 0
-  _dialog: {fileID: 11400000, guid: 6a97f4ac15f33c34cb2877eaeba9c049, type: 2}
+  _dialog: {fileID: 11400000, guid: b1b10a0ce0ffd6c449b5486e0193bb59, type: 2}
   _startsDialog: 1
   minigame: 0
   book: 0
